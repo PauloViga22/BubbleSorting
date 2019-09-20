@@ -1,8 +1,7 @@
 var rndNum = 0,
   listArr = [];
 
-document.getElementById("generateBtn").addEventListener("click", function () {
-
+let generateRandomNumber = function () {
   listArr = [];
   rndNum = Math.floor((Math.random() * 1000) + 1);
   for (n = 1; n < rndNum; n++) {
@@ -11,11 +10,8 @@ document.getElementById("generateBtn").addEventListener("click", function () {
   shuffle(listArr);
   console.clear();
   // console.log(listArr);
-
   document.getElementById("left").innerHTML = listArr;
-});
-
-
+};
 
 var shuffle = function (array) {
   var currentIndex = array.length;
@@ -33,3 +29,6 @@ var shuffle = function (array) {
   }
   return array;
 };
+
+
+document.getElementById("generateBtn").addEventListener("click", generateRandomNumber);
